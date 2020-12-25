@@ -30,5 +30,14 @@ const reverseString2 = (str) => {
     return reversed;
 }
 
+const reverseString3 = (str) => {
+    return str.split('').reduce((rev, char) => char + rev, '');
+}
+
+// const reverseString3 = (str) => {
+//     return str.split('').reduce((rev, char) => char + rev, '');
+// }
+
 console.log(reverseString1("Thomas"));
 console.log(reverseString2("Thomas"));
+console.log(reverseString3("Ashley"));
