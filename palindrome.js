@@ -9,5 +9,13 @@ const palindrome1 = (str) => {
     }
 }
 
+const palindrome2 = (str) => {
+    const rev = str.split('').reverse().join('');
+
+    return str === rev;
+}
+
 console.log(palindrome1("abba"));
 console.log(palindrome1("abcdefg"));
+console.log(palindrome2("abba"));
+console.log(palindrome2("abcdefg"));
