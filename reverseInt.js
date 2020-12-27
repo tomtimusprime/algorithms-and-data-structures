@@ -8,6 +8,16 @@ const reverseInt = (int) => {
     return parseInt(reversed);
 }
 
+
+const reverseInt2 = (n) => {
+    const reversed = n.toString().split('').reverse().join('');
+
+    if (n < 0) {
+        return parseInt(reversed) * -1;
+    }
+    return parseInt(reversed);
+}
+
 console.log(reverseInt(-51));
 console.log(reverseInt(51));
 console.log(reverseInt(189));
