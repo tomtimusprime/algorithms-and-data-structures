@@ -30,4 +30,30 @@ const maxChar2 = (str) => {
     return maxChar;
 }
 
-console.log(maxChar2("Hello There!"));
+
+const maxChar3 = (str) => {
+    const charMap = {};
+    let max = 0;
+    let maxChar = '';
+
+    for (let char of str) {
+        // charMap[char] = charMap[char] + 1 || 1;
+        if(charMap[char]) {
+            charMap[char]++;
+        }
+        else {
+            charMap[char] = 1;
+        }
+    }
+    console.log(charMap);
+
+    for (let char in charMap) {
+        if(charMap[char] > max) {
+            max = charMap[char];
+            maxChar = char;
+        }
+    }
+    return maxChar;
+}
+
+console.log(maxChar3("Hello There!"));
