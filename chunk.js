@@ -5,4 +5,4 @@ const chunk = (array, size) => {
     }
 
     return;
-}
+} 
