@@ -7,6 +7,14 @@
 //   reverse('Greetings!') === '!sgniteerG'
 let str = "Jumbo";
 
+const reverse = (str) => {
+    return str.split('').reverse().join('');
+}
+
+function reverse(str) {
+    
+}
+
 //solution 1
 // function reverse(str) {
 //     let reverseArray = [];
@@ -42,13 +50,13 @@ let str = "Jumbo";
 // }
 
 //solution 5
-function reverse(str) {
-    return str.split('').reduce((rev, char) => char + rev, '');
-}
+// function reverse(str) {
+//     return str.split('').reduce((rev, char) => char + rev, '');
+// }
 
 
-console.log(`original string is ${str}`);
-console.log(`The reverse string is ${reverse(str)}`);
+// console.log(`original string is ${str}`);
+// console.log(`The reverse string is ${reverse(str)}`);
 
 
 module.exports = reverse;
