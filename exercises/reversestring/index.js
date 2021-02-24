@@ -7,12 +7,27 @@
 //   reverse('Greetings!') === '!sgniteerG'
 let str = "Jumbo";
 
-const reverse = (str) => {
-    return str.split('').reverse().join('');
-}
+//Additional Practice 1
+// const reverse = (str) => {
+//     return str.split('').reverse().join('');
+// }
 
+//Additional Practice 2
+// function reverse(str) {
+//     let reversed = '';
+
+//     for (let character of str) {
+//         reversed = character + reversed;
+//     }
+
+//     return reversed;
+// }
+
+//Additional Practice 3
 function reverse(str) {
-    
+    return str.split('').reduce((reversed, character) => {
+        return character + reversed;
+    }, ''); //reduce functions second parameter is an initial value
 }
 
 //solution 1
