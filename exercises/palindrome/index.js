@@ -8,13 +8,21 @@
 //   palindrome("abcdefg") === false
 
 //Additional Practice
-const palindrome = (str) => {
-    let isPal = false;
+// const palindrome = (str) => {
+//     let isPal = false;
     
-    if(str.split('').reverse().join('') === str) {
-        isPal = true;
-    }
-    return isPal;
+//     if(str.split('').reverse().join('') === str) {
+//         isPal = true;
+//     }
+//     return isPal;
+// }
+
+//Additional practice using the .every() function
+const palindrome = (str) => {
+    const array = str.split('');
+    return array.every((char, i) => {
+        return char === array[array.length - i - 1];
+    })
 }
 
 // const palindrome = (str) => {
