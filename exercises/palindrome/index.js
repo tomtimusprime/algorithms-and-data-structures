@@ -7,6 +7,22 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+//Additional Practice
+const palindrome = (str) => {
+    let isPal = false;
+    
+    if(str.split('').reverse().join('') === str) {
+        isPal = true;
+    }
+    return isPal;
+}
+
+// const palindrome = (str) => {
+//     const reversed = str.split('').reverse().join('');
+
+//     return reversed === str;
+// }
+
 //Solution 1
 // function palindrome(str) {
 //     let isPal = false;
@@ -18,11 +34,11 @@
 
 
 //Solution 2
-function palindrome(str) {
-    const reversed = str.split('').reverse().join('');
+// function palindrome(str) {
+//     const reversed = str.split('').reverse().join('');
 
-    return str === reversed;
-}
+//     return str === reversed;
+// }
 
 
 console.log(palindrome("bob"));
