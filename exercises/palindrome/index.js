@@ -18,13 +18,20 @@
 // }
 
 //Additional practice using the .every() function
-const palindrome = (str) => {
-    const array = str.split('');
-    return array.every((char, i) => {
-        return char === array[array.length - i - 1];
+// const palindrome = (str) => {
+//     const array = str.split('');
+//     return array.every((char, i) => {
+//         return char === array[array.length - i - 1];
+//     })
+// }
+
+
+//Additional Practice using .every() function without 
+function palindrome(str) {
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1];
     })
 }
-
 // const palindrome = (str) => {
 //     const reversed = str.split('').reverse().join('');
 
