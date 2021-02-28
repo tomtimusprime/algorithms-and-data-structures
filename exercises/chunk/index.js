@@ -28,21 +28,9 @@
 //alternate solution to array chunking
 const chunk = (array, size) => {
     const chunked = [];
-    const index = 0;
+    let index = 0;
 
     while (index < array.length) {
-        chunked.push(array.slice(index, index + size));
-        index += size;
-    }
-
-    return chunked
-}
-
-const chunk = (array, size) => {
-    const chunked = [];
-    const index = 0;
-
-    while(index < array.length) {
         chunked.push(array.slice(index, index + size));
         index += size;
     }
@@ -51,5 +39,16 @@ const chunk = (array, size) => {
 }
 
 
+function chunk1(array, size) {
+    const chunked = [];
+    let index = 0;
+
+    while(index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size;
+    }
+
+    return chunked;
+}
 
 module.exports = chunk;
