@@ -8,21 +8,48 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {
-    //create empy array to hold chunks called chunked
+// function chunk(array, size) {
+//     //create empy array to hold chunks called chunked
+//     const chunked = [];
+//     //For each element in the 'unchunked' array...
+//     for (let element of array) {
+//         //retrieve the last element in 'chunked'
+//         const last = chunked[chunked.length - 1];
+//         //
+//         if(!last || last.length === size) {
+//             chunked.push([element]);
+//         } else {
+//             last.push(element);
+//         }
+//     }
+//     return chunked;
+// }
+
+//alternate solution to array chunking
+const chunk = (array, size) => {
     const chunked = [];
-    //For each element in the 'unchunked' array...
-    for (let element of array) {
-        //retrieve the last element in 'chunked'
-        const last = chunked[chunked.length - 1];
-        //
-        if(!last || last.length === size) {
-            chunked.push([element]);
-        } else {
-            last.push(element);
-        }
+    const index = 0;
+
+    while (index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size;
     }
+
+    return chunked
+}
+
+const chunk = (array, size) => {
+    const chunked = [];
+    const index = 0;
+
+    while(index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size;
+    }
+
     return chunked;
 }
+
+
 
 module.exports = chunk;
