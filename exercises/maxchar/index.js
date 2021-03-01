@@ -34,7 +34,7 @@ const maxChar = (str) => {
 
     for (let char of str) {
         if(charMap[char]) {
-            charMap[char]++
+            charMap[char]++;
         } else {
             charMap[char] = 1;
         }
