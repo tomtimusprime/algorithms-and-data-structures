@@ -76,8 +76,8 @@ module.exports = anagrams;
 // }
 
 
-//Anagrams - comparing to see if two strings have the same characters in therem. step by step
-//We'll have two functions. one will be a helper function. In the main function, 
+//Anagrams - comparing to see if two strings have the same characters in them. step by step
+//We'll have two functions. one will be a helper function. In the main function, we'll be returning if the two strings have the same characters in the form of a boolean - true or false
 //create a helper function to clean up the strings that are used, including pulling out any characters thar aren't part of a regular expression.
 //in that helper function we want to sort it alphabetically 
 //in the anagrams function we can use our helper function 

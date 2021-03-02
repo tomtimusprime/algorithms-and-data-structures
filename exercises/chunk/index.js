@@ -27,7 +27,9 @@
 
 //alternate solution to array chunking
 const chunk = (array, size) => {
+    //Create an empty array of the chunks
     const chunked = [];
+    //start index = 0
     let index = 0;
 
     while (index < array.length) {
