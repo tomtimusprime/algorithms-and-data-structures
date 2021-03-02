@@ -74,3 +74,10 @@ module.exports = anagrams;
 
 //     return true;
 // }
+
+
+//Anagrams - comparing to see if two strings have the same characters in therem. step by step
+//We'll have two functions. one will be a helper function. In the main function, 
+//create a helper function to clean up the strings that are used, including pulling out any characters thar aren't part of a regular expression.
+//in that helper function we want to sort it alphabetically 
+//in the anagrams function we can use our helper function 
