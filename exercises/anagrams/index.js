@@ -50,6 +50,8 @@ function cleanStr(str) {
 
 module.exports = anagrams;
 
+str.replace(/[^\w]/g)
+
 // function buildCharMap(str) {
 //     const charMap = {};
 
