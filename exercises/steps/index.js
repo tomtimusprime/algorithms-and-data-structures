@@ -17,6 +17,32 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+    for (let row = 0; row < n; row++) {
+        let stair = '';
+
+        for (let column = 0; column < n; column++) {
+            if(column <= row) {
+                stair += '#';
+            } else {
+                stair += ' ';
+            }
+        }
+
+        console.log(stair);
+    }
+}
 
 module.exports = steps;
+
+/*
+From O to n
+    create an empty string 'stair'
+    From 0 to n
+        IF the current column is equal to or less than the current row
+        Add a '#' to 'stair'
+        ELSE
+        Add a space to 'stair'
+    console.log 'stair'
+
+*/
