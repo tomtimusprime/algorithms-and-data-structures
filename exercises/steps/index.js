@@ -33,6 +33,8 @@ function steps(n) {
     }
 }
 
+steps(10);
+
 module.exports = steps;
 
 /*
