@@ -43,11 +43,6 @@ const capitalize2 = (str) => {
     return words.join(' ');
 }
 
-console.log(capitalize1('hi how are you doing today?'));
-
-module.exports = capitalize;
-
-
 const capitalize3 = (str) => {
     let words = [];
 
@@ -56,3 +51,8 @@ const capitalize3 = (str) => {
     }
     return words.join(' ');
 }
+
+console.log(capitalize3('hi how are you doing today?'));
+
+module.exports = capitalize;
+
