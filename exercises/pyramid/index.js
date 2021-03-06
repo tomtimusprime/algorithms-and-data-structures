@@ -15,17 +15,19 @@
 //       '#####'
 
 function pyramid(n) {
-    for(let row = 0; row < n; row++) {
-        let stair = '#';
+    const midpoint = Math.floor((2 * n - 1) / 2);
 
-        for(let column = 0; column < n; column++) {
-            if(column <= row) {
-                stair += '#';
+    for (let row = 0; row < n; row++) {
+        let level = '';
+
+        for(let column = 0; column < 2 * n - 1; column++) {
+            if(midpoint - row <= column && midpoint + row >= column) {
+                level += '#';
             } else {
-                stair += ' '
+                level += ' ';
             }
         }
-        console.log(stair);
+        console.log(level);
     }
 
 }
@@ -33,3 +35,10 @@ function pyramid(n) {
 pyramid(10);
 
 module.exports = pyramid;
+
+/*
+Pseudocode
+First create a function Pyramid
+Second find the midpoint - 
+
+*/
