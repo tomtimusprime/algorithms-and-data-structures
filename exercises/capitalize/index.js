@@ -23,4 +23,36 @@ function capitalize(str) {
 
 }
 
+const capitalize1 = (str) => {
+    const words = [];
+
+    for(word of str.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1));
+    }
+    
+    return words.join(' ');
+}
+
+const capitalize2 = (str) => {
+    const words = [];
+
+    for(word of str.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1));
+    }
+
+    return words.join(' ');
+}
+
+console.log(capitalize1('hi how are you doing today?'));
+
 module.exports = capitalize;
+
+
+const capitalize3 = (str) => {
+    let words = [];
+
+    for(word of str.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1));
+    }
+    return words.join(' ');
+}
