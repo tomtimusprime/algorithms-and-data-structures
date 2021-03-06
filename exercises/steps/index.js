@@ -35,9 +35,18 @@ function steps(n) {
 
 steps(10);
 
+
+function recursiveSteps(n) {
+    if(n === 0) {
+        return;
+    }
+    
+}
+
 module.exports = steps;
 
 /*
+Two for loops
 From O to n
     create an empty string 'stair'
     From 0 to n
@@ -48,3 +57,5 @@ From O to n
     console.log 'stair'
 
 */
+
+//With recursion you always want to start with a 'base case' or a case in which the recursion stops.
