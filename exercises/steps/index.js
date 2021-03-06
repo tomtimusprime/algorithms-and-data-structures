@@ -33,15 +33,44 @@ function steps(n) {
     }
 }
 
-steps(10);
+const steps1 = (n) => {
+    for (let row = 0; row < n; row++) {
+        let step = '';
 
-
-function recursiveSteps(n) {
-    if(n === 0) {
-        return;
+        for(let column = 0; column < n; column++) {
+            if(column <= row) {
+                step += '#';
+            } else {
+                step += ' ';
+            }
+        }
+        console.log(step);
     }
-    
 }
+
+const steps2 = (n) => {
+    for(let row = 0; row < n; row++) {
+        let level = '';
+
+        for(let column = 0; column < n; column++) {
+            if(column <= row) {
+                level += '#';
+            } else {
+                level += ' ';
+            }
+        }
+        console.log(level);
+    }
+}
+steps2(10);
+
+
+// function recursiveSteps(n) {
+//     if(n === 0) {
+//         return;
+//     }
+
+// }
 
 module.exports = steps;
 
