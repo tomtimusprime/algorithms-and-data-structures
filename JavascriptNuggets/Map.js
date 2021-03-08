@@ -24,6 +24,12 @@ const people = [
 const ages = people.map((people)=> {
     return people.age * 2;
 })
-
+const newPeople = people.map((people) => {
+return {
+    firstName: people.name.toUpperCase(),
+    oldAge: people.age * 2
+}
+})
+console.log(newPeople);
 console.log(ages);
 console.log(people);
