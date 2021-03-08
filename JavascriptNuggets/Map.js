@@ -22,7 +22,8 @@ const people = [
 //Uses values from the original array when making a new one.
 
 const ages = people.map((people)=> {
-    return people.age;
+    return people.age * 2;
 })
 
 console.log(ages);
+console.log(people);

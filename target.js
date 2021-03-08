@@ -8,23 +8,74 @@
 //If our map contains our compliment number then we know our result
 //If our map DOES NOT contain our compliment we're going to add our number and iterator to our map
 
-function twoSum(array, target) {
-    const result = [];
-    const numIndex = new Map();
-    console.log(numIndex);
-    // for (let i = 0; i < array.length; i++) {
-    //     let num = array[i];
-    //     let compliment = target - num;
+// function twoSum(array, target) {
+//     const result = [];
+//     const numIndex = new Map();
+//     console.log(numIndex);
+//     // for (let i = 0; i < array.length; i++) {
+//     //     let num = array[i];
+//     //     let compliment = target - num;
 
-    //     if(numIndex.has(compliment)) {
-    //         result[0] =  numIndex.get(compliment);
-    //         result[1] = i;
-    //         console.log(result[0], result[1]);
-    //         return result;
-    //     }
-    //     numIndex.set(num, i);
-    // }
-    // return result;
+//     //     if(numIndex.has(compliment)) {
+//     //         result[0] =  numIndex.get(compliment);
+//     //         result[1] = i;
+//     //         console.log(result[0], result[1]);
+//     //         return result;
+//     //     }
+//     //     numIndex.set(num, i);
+//     // }
+//     // return result;
+// }
+
+// const twoSum = (array, target) => {
+//     const numsIndexes = {};
+
+//     for (let i = 0; i < array.length; i++) {
+//         let currentDifference = target - array[i];
+//         //exception handling
+//         if(numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
+//             return [i, numsIndexes[currentDifference]];
+//         } else {
+//             numsIndexes[array[i]] = i;
+//         }
+//     }
+// }
+
+const twoSum = (array, target) => {
+    const numsIndexes = {};
+
+    for (let i = 0; i < array.length; i++) {
+        //exception handling.
+        let currentDifference = target - array[i];
+        if (numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
+            return [i, numsIndexes[currentDifference]];
+        } else {
+            numsIndexes[array[i]] = i;
+        }
+    }
 }
 
-twoSum([1,2,3,4,5], 9);
+const twoSum2 = function(array, target) {
+    const numsIndexes = {};
+
+    for(let i = 0; i < array.length; i++) {
+        let currentDifference = target - array[i];
+        if(numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
+            console.log(numsIndexes[currentDifference]);
+            return [i, numsIndexes[currentDifference]]
+        } else {
+            numsIndexes[array[i]] = i;
+            console.log(numsIndexes[array[i]]);
+        }
+    }
+}
+
+
+console.log(twoSum2([1, 2, 3, 4, 7], 9));
+
+/*
+Create an object containing the key-value pairs of the element and its index, respectively.
+Iterate through the array that's passed in as an argument. For currentElement, compute currentDifference.
+If currentDifference exists in hashTable and current ElementIndex !== hashTable[currentDifference], return the indices of each element.
+If currentDifference does not exist or the indices of both elements are equal, move to the next element in the array.
+*/
