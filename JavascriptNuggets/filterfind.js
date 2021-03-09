@@ -20,7 +20,9 @@ const tom = people.find((person) => {
 })
 
 const olderPerson = people.find((person) => person.age > 33);
+const ashley = people.filter((person) => person.name === 'Ashley');
 
 console.log(youngPeople);
 console.log(tom);
 console.log(olderPerson);
+console.log(ashley);
