@@ -70,12 +70,47 @@ const twoSum2 = function(array, target) {
     }
 }
 
+const twoSum3 = (array, target) => {
+    //create a hashmap
+    const indexes = {};
 
-console.log(twoSum2([1, 2, 3, 4, 7], 9));
+    for(let i = 0; i < array.length; i++) {
+        let currentDifference = target - array[i];
+        if(indexes[currentDifference] !== undefined && indexes[currentDifference] !== i) {
+            return [i, indexes[currentDifference]];
+        } else {
+            indexes[array[i]] = i;
+        }
+    }
+}
+
+const twoSum4Brute = (array, target) => {
+    const results = [];
+
+    for(let i = 0; i < array.length; i++) {
+        
+        for(let j = i + 1; j < array.length; j++) {
+            if(array[i] + array[j] === target) {
+                results.push(i);
+                results.push(j);
+            }
+        }
+    }
+
+    return results;
+}
+
+
+console.log(twoSum4Brute([1, 2, 3, 4, 7], 9));
 
 /*
 Create an object containing the key-value pairs of the element and its index, respectively.
 Iterate through the array that's passed in as an argument. For currentElement, compute currentDifference.
 If currentDifference exists in hashTable and current ElementIndex !== hashTable[currentDifference], return the indices of each element.
+If currentDifference does not exist or the indices of both elements are equal, move to the next element in the array.
+
+Create an object containing the key-value pairs of the element and its index, respectively.
+Iterate through array. For currentElement, compute currentDifference.
+If currentDifference exists in hashTable and currentElementIndex !== hashTable[currentDifference], return the indices of each element.
 If currentDifference does not exist or the indices of both elements are equal, move to the next element in the array.
 */

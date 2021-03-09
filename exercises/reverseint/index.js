@@ -41,3 +41,7 @@ function reverseInt(n) {
 console.log(reverseInt(1234567890));
 
 module.exports = reverseInt;
+
+//take an input of n.
+//turn it into a string and then split it into an array so we can use some array functions on it.
+//return an integer and multiply it by the sign of the original input
