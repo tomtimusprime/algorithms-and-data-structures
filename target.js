@@ -41,67 +41,130 @@
 //     }
 // }
 
-const twoSum = (array, target) => {
-    const numsIndexes = {};
+// const twoSum = (array, target) => {
+//     const numsIndexes = {};
 
-    for (let i = 0; i < array.length; i++) {
-        //exception handling.
-        let currentDifference = target - array[i];
-        if (numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
-            return [i, numsIndexes[currentDifference]];
-        } else {
-            numsIndexes[array[i]] = i;
-        }
-    }
-}
+//     for (let i = 0; i < array.length; i++) {
+//         //exception handling.
+//         let currentDifference = target - array[i];
+//         if (numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
+//             return [i, numsIndexes[currentDifference]];
+//         } else {
+//             numsIndexes[array[i]] = i;
+//         }
+//     }
+// }
 
-const twoSum2 = function(array, target) {
-    const numsIndexes = {};
+// const twoSum2 = function(array, target) {
+//     const numsIndexes = {};
 
-    for(let i = 0; i < array.length; i++) {
-        let currentDifference = target - array[i];
-        if(numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
-            console.log(numsIndexes[currentDifference]);
-            return [i, numsIndexes[currentDifference]]
-        } else {
-            numsIndexes[array[i]] = i;
-            console.log(numsIndexes[array[i]]);
-        }
-    }
-}
+//     for(let i = 0; i < array.length; i++) {
+//         let currentDifference = target - array[i];
+//         if(numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i) {
+//             console.log(numsIndexes[currentDifference]);
+//             return [i, numsIndexes[currentDifference]]
+//         } else {
+//             numsIndexes[array[i]] = i;
+//             console.log(numsIndexes[array[i]]);
+//         }
+//     }
+// }
 
-const twoSum3 = (array, target) => {
-    //create a hashmap
-    const indexes = {};
+// const twoSum3 = (array, target) => {
+//     //create a hashmap
+//     const indexes = {};
 
-    for(let i = 0; i < array.length; i++) {
-        let currentDifference = target - array[i];
-        if(indexes[currentDifference] !== undefined && indexes[currentDifference] !== i) {
-            return [i, indexes[currentDifference]];
-        } else {
-            indexes[array[i]] = i;
-        }
-    }
-}
+//     for(let i = 0; i < array.length; i++) {
+//         let currentDifference = target - array[i];
+//         if(indexes[currentDifference] !== undefined && indexes[currentDifference] !== i) {
+//             return [i, indexes[currentDifference]];
+//         } else {
+//             indexes[array[i]] = i;
+//         }
+//     }
+// }
 
-const twoSum4Brute = (array, target) => {
-    const results = [];
+// const twoSum4Brute = (array, target) => {
+//     const results = [];
 
-    for(let i = 0; i < array.length; i++) {
+//     for(let i = 0; i < array.length; i++) {
         
-        for(let j = i + 1; j < array.length; j++) {
-            if(array[i] + array[j] === target) {
-                results.push(i);
-                results.push(j);
-            }
-        }
-    }
+//         for(let j = i + 1; j < array.length; j++) {
+//             if(array[i] + array[j] === target) {
+//                 results.push(i);
+//                 results.push(j);
+//             }
+//         }
+//     }
 
-    return results;
+//     return results;
+// }
+
+// const twoSum5Better = (array, target) => {
+//     const numIndex = {}; //declare hashtable
+//     //put the array items in the hashtable
+//     for(let i = 0; i < array.length; i++) {
+//         let thisNum = array[i];
+//         numIndex[thisNum] = i;
+//     }
+
+//     for(let i = 0; i < array.length; i++) {
+//         let difference = target - array[i];
+//         if(numIndex.hasOwnProperty(difference) && numIndex[difference] !== i) {
+//             return [i, numIndex[difference]];
+//         }
+//     }
+// }
+
+// const twoSumBetter = (array, target) => {
+//     const hashTable = {}
+
+//     for(let i = 0; i < array.length; i++) {
+//         let thisNum = array[i];
+//         hashTable[thisNum] = i;
+//     }
+
+//     for (let i = 0; i < array.length; i++) {
+//         //find difference
+//         let difference = target - array[i];
+//         if(hashTable.hasOwnProperty(difference) && hashTable[difference] !== i) {
+//             return [i, hashTable[difference]];
+//         }
+
+//     }
+// }
+
+// function fibonacci(n) {
+//     if(n < 2) {
+//         return n;
+//     } else {
+//         return fibonacci(n - 1) + fibonacci(n - 2);
+//     }
+// }
+
+// const fibonacciRecursion = (n) => {
+//     if(n < 2) {
+//         return n;
+//     } else {
+//         return fibonacciRecursion(n - 1) + fibonacciRecursion(n - 2);
+//     }
+// }
+
+function fibonacci (n) {
+    if (n < 2) {
+        return n;
+    } else {
+        console.log(n);
+        return fibonacci(n - 1) + fibonacci (n-2);
+    }
 }
 
+fibonacci(15);
 
-console.log(twoSum4Brute([1, 2, 3, 4, 7], 9));
+//O(n+m) runtime complexity - Big O notation
+
+
+// console.log(twoSum4Brute([1, 2, 3, 4, 7], 9));
 
 /*
 Create an object containing the key-value pairs of the element and its index, respectively.
