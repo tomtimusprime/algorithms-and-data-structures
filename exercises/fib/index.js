@@ -8,12 +8,12 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {
+function fibonacci(n) {
     const result = [0, 1];
     if (n < 2) {
         return n;
     } else {
-        for(let i = 2; i <= n; i++) {
+        for (let i = 2; i <= n; i++) {
             const a = result[i - 1];
             const b = result[i - 2];
             result.push(a + b);
@@ -25,14 +25,35 @@ function fib(n) {
 }
 //This is linear runtime. For every addition to n, there's one additional calcululation/computation
 
-const fibRecursive = (n) => {
+const memoize = (fn) => {
+    const cache = {};
+
+    return function (...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+
+        return result;
+    }
+}
+const fib = memoize(fibRecursive);
+
+function fibRecursive(n) {
     if (n < 2) {
         return n;
+        //This accounts for only returning 0 or 1 because there's nothing to add to the sequence at that point.
     }
 
-    return fibRecursive(n - 1) + fibRecursive(n - 2);
+    return fib(n - 1) + fib(n - 2);
 }
+//This is exponential runtime. For every additional element in the sequence you can a significant increase in the number of fibRecursive function calls.
+//Under normal circumstances, we would not accept this as a viable solution from a computation standpoint.
 
 console.log(fibRecursive(11));
+
+
 
 module.exports = fib;
