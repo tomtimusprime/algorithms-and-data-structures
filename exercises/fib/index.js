@@ -20,9 +20,19 @@ function fib(n) {
         }
     }
 
-    return result;
+    return result[n];
+    //return result[result.length - 1];
+}
+//This is linear runtime. For every addition to n, there's one additional calcululation/computation
+
+const fibRecursive = (n) => {
+    if (n < 2) {
+        return n;
+    }
+
+    return fibRecursive(n - 1) + fibRecursive(n - 2);
 }
 
-console.log(fib(11));
+console.log(fibRecursive(11));
 
 module.exports = fib;
