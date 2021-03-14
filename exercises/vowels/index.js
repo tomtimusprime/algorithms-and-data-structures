@@ -21,9 +21,34 @@
 //     return numVals;
 // }
 
-function vowels(str) {
-    const matches = str.match(/[aeiou]/gi);
-    return matches ? matches.length : 0;
+// function vowels(str) {
+//     const matches = str.match(/[aeiou]/gi);
+//     return matches ? matches.length : 0;
+// }
+
+const vowels = (str) => {
+    let counter = 0;
+    let vowelArray = ['a','e','i','o','u'];
+
+    for (char of str.toLowerCase()) {
+        if(vowelArray.includes(char)) {
+            counter++;
+        }
+    }
+    return counter;
 }
 
-module.exports = vowels;
+const vowels2 = (str) => {
+    let counter = 0;
+    let checkerArray = ['a','e','i','o','u'];
+    const lowerCase = str.toLowerCase().split('');
+
+    for (let i = 0; i < str.length; i++) {
+        if(checkerArray.includes(lowerCase[i])) {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+module.exports = vowels2;
