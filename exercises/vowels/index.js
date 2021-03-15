@@ -51,4 +51,16 @@ const vowels2 = (str) => {
     return counter;
 }
 
+const vowels3 = (str) => {
+    let counter = 0;
+    let checker = ['a', 'e', 'i','o','u'];
+
+    for (char of str.toLowerCase()) {
+        if(checker.includes(char)) {
+            counter++;
+        }
+    }
+    return counter;
+}
+
 module.exports = vowels2;
