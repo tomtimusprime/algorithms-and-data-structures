@@ -9,7 +9,7 @@
 //   fib(4) === 3
 
 function fibonacci(n) {
-    const result = [0, 1];
+    const result = [0, 1]; // give it a starting point
     if (n < 2) {
         return n;
     } else {

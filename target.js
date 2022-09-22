@@ -100,6 +100,21 @@
 //     return results;
 // }
 
+const twoSumBrute = (array, target) => {
+    const result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        for(let j = i + 1; j < array.length; j++) {
+            if(array[i] + array[j] === target) {
+                results.push(i);
+                results.push(j);
+            }
+        }
+    }
+
+    return result;
+}
+
 // const twoSum5Better = (array, target) => {
 //     const numIndex = {}; //declare hashtable
 //     //put the array items in the hashtable
@@ -116,23 +131,23 @@
 //     }
 // }
 
-// const twoSumBetter = (array, target) => {
-//     const hashTable = {}
+const twoSumBetter = (array, target) => {
+    const hashTable = {}
 
-//     for(let i = 0; i < array.length; i++) {
-//         let thisNum = array[i];
-//         hashTable[thisNum] = i;
-//     }
+    for(let i = 0; i < array.length; i++) {
+        let thisNum = array[i];
+        hashTable[thisNum] = i;
+    }
 
-//     for (let i = 0; i < array.length; i++) {
-//         //find difference
-//         let difference = target - array[i];
-//         if(hashTable.hasOwnProperty(difference) && hashTable[difference] !== i) {
-//             return [i, hashTable[difference]];
-//         }
+    for (let i = 0; i < array.length; i++) {
+        //find difference
+        let difference = target - array[i];
+        if(hashTable.hasOwnProperty(difference) && hashTable[difference] !== i) {
+            return [i, hashTable[difference]];
+        }
 
-//     }
-// }
+    }
+}
 
 // function fibonacci(n) {
 //     if(n < 2) {
