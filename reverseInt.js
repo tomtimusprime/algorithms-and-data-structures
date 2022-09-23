@@ -18,8 +18,13 @@ const reverseInt2 = (n) => {
     return parseInt(reversed);
 }
 
-console.log(reverseInt(-51));
-console.log(reverseInt(51));
+const reverseInt3 = (n) => {
+    let reversed = n.toString().split('').reversed().join('');
+    return n < 0 ? parseInt(reversed * -1) : parseInt(reversed);
+}
+
+console.log(reverseInt(-5132));
+console.log(reverseInt(5156));
 console.log(reverseInt(189));
-console.log(reverseInt(5));
+console.log(reverseInt(98765));
 console.log(reverseInt(-9));
