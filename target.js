@@ -176,6 +176,15 @@ function fibonacci (n) {
 
 fibonacci(15);
 
+function fibonacci (n){
+    if (n < 2) {
+        return n;
+    } else {
+        console.log(n);
+        return fibonacci(n - 1) + fibonacci (n - 2);
+    }
+}
+
 //O(n+m) runtime complexity - Big O notation
 
 
